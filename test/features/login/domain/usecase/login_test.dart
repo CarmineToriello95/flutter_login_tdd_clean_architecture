@@ -26,7 +26,7 @@ void main() {
         .thenAnswer((_) async => Right(tUser));
     // act
     final result =
-        await loginUsecase.execute(email: tEmail, password: tPassword);
+        await loginUsecase(Params(email: tEmail, password: tPassword));
     // assert
     expect(result, Right(tUser));
     verify(mockLoginRepository.login(tEmail, tPassword));
