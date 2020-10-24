@@ -18,7 +18,7 @@ void main() {
 
   final tEmail = 'test@test.com';
   final tPassword = '123456';
-  final tUser = User(sessionId: '192837465');
+  final tUser = User(sessionId: '1603447040818');
 
   test('should get user session id from the repository', () async {
     // arrange
