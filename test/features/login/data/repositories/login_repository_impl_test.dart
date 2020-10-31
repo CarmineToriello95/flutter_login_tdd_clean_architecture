@@ -1,13 +1,12 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_login_tdd_clean_architecture/core/error/exceptions.dart';
 import 'package:flutter_login_tdd_clean_architecture/core/error/failures.dart';
-import 'package:flutter_login_tdd_clean_architecture/core/platform/network_info.dart';
+import 'package:flutter_login_tdd_clean_architecture/core/network/network_info.dart';
 import 'package:flutter_login_tdd_clean_architecture/features/login/data/datasources/login_local_data_source.dart';
 import 'package:flutter_login_tdd_clean_architecture/features/login/data/datasources/login_remote_data_source.dart';
 import 'package:flutter_login_tdd_clean_architecture/features/login/data/models/user_model.dart';
 import 'package:flutter_login_tdd_clean_architecture/features/login/data/repositories/login_repository_impl.dart';
 import 'package:flutter_login_tdd_clean_architecture/features/login/domain/entities/user.dart';
-import 'package:flutter_login_tdd_clean_architecture/features/login/domain/repositories/login_repository.dart';
 import 'package:mockito/mockito.dart';
 import 'package:flutter_test/flutter_test.dart';
 

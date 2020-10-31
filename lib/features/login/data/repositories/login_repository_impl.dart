@@ -3,7 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_login_tdd_clean_architecture/core/error/exceptions.dart';
 
 import '../../../../core/error/failures.dart';
-import '../../../../core/platform/network_info.dart';
+import '../../../../core/network/network_info.dart';
 import '../../domain/entities/user.dart';
 import '../../domain/repositories/login_repository.dart';
 import '../datasources/login_local_data_source.dart';
