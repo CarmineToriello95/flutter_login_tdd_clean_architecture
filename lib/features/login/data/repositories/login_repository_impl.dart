@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter_login_tdd_clean_architecture/core/error/exceptions.dart';
 
 import '../../../../core/error/failures.dart';
 import '../../../../core/platform/network_info.dart';
@@ -20,8 +21,17 @@ class LoginRepositoryImpl implements LoginRepository {
   });
 
   @override
-  Future<Either<Failure, User>> login(String email, String password) {
-    // TODO: implement login
-    throw UnimplementedError();
+  Future<Either<Failure, User>> login(String email, String password) async {
+    if (await networkInfo.isConnected) {
+      try {
+        final remoteUser = await remoteDataSource.login(email, password);
+        localDataSource.cacheUser(remoteUser);
+        return Right(remoteUser);
+      } on ServerException {
+        return Left(ServerFailure());
+      }
+    } else {
+      return Left(NetworkFailure());
+    }
   }
 }

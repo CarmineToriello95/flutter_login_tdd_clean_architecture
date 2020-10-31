@@ -1,5 +1,5 @@
-import 'package:flutter_login_tdd_clean_architecture/features/login/domain/entities/user.dart';
+import 'package:flutter_login_tdd_clean_architecture/features/login/data/models/user_model.dart';
 
 abstract class LoginLocalDataSource {
-  Future<void> cacheUser(User user);
+  Future<void> cacheUser(UserModel user);
 }

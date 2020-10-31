@@ -11,4 +11,8 @@ class UserModel extends User {
     final String sessionId = (json['message'] as String).split(':')[1];
     return UserModel(sessionId: sessionId);
   }
+
+  Map<String, dynamic> toJson() => {
+        'sessionId': sessionId,
+      };
 }
