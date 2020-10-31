@@ -9,16 +9,16 @@ import '../datasources/login_local_data_source.dart';
 import '../datasources/login_remote_data_source.dart';
 
 class LoginRepositoryImpl implements LoginRepository {
-  final LoginRemoteDataSource loginRemoteDataSource;
-  final LoginLocalDataSource loginLocalDataSource;
+  final LoginRemoteDataSource remoteDataSource;
+  final LoginLocalDataSource localDataSource;
   final NetworkInfo networkInfo;
 
   LoginRepositoryImpl({
-    @required this.loginRemoteDataSource,
-    @required this.loginLocalDataSource,
+    @required this.remoteDataSource,
+    @required this.localDataSource,
     @required this.networkInfo,
   });
-  
+
   @override
   Future<Either<Failure, User>> login(String email, String password) {
     // TODO: implement login
