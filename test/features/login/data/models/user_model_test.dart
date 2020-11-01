@@ -14,13 +14,24 @@ void main() {
     expect(tUser, isA<User>());
   });
 
-  test('should return a valid model from the JSON', () async {
-    // assert
-    final Map<String, dynamic> jsonMap =
-        json.decode(fixture('login_api_response.json'));
-    // act
-    final result = UserModel.fromJson(jsonMap);
-    // assert
-    expect(result, tUser);
+  group('fromJson', () {
+    test('should return a valid model from the JSON', () async {
+      // arrange
+      final Map<String, dynamic> jsonMap =
+          json.decode(fixture('login_api_response.json'));
+      // act
+      final result = UserModel.fromJson(jsonMap);
+      // assert
+      expect(result, tUser);
+    });
+  });
+
+  group('toJson', () {
+    test('should return a JSON map containing the proper data', () async {
+      // act
+      final result = tUser.toJson();
+      // assert
+      expect(result, {'sessionId': '1603447040818'});
+    });
   });
 }
