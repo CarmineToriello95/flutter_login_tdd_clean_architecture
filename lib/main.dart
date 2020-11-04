@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'injection_container.dart' as di;
 
-void main() {
+void main() async {
+  await di.init();
   runApp(MyApp());
 }
 
@@ -22,7 +24,9 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Text('Login'),),
+      body: Center(
+        child: Text('Login'),
+      ),
     );
   }
 }
